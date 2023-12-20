@@ -53,9 +53,12 @@ app.get("/artikli/:id", (req, res) => {
 });
 
 //Prikazi profil GET korisnik/profil/<id>
+app.get("/moj_profil:id", (req, res) => {
+  let profil = [{}, {}];
+});
 
 //Uredi profil korisnika/dodaj informacije o korisniku PATCH
-app.patch("/korisnici/:id", (req, res) => {
+app.patch("/moj_profil/:id", (req, res) => {
   console.log("Podaci", req.params.id, req.body);
   res.status(200);
   res.send();
@@ -69,7 +72,17 @@ app.post("/novi_artikl", (req, res) => {
 });
 
 //Uredi artikl PATCH
+app.patch("/moj_profil/:id_artikla", (req, res) => {
+  console.log("Podaci", req.params.id_artikla, req.body);
+  res.status(200);
+  res.send();
+});
 
 //Obrisi artikl DELETE
+app.delete("/moj_profil/:id_artikla", (req, res) => {
+  console.log("Podaci", req.params.id_artikla);
+  res.status(200);
+  res.send();
+});
 
 app.listen(port, () => console.log(`Slušam na portu ${port}!`));
